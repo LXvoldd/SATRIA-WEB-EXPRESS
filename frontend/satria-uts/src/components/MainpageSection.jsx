@@ -2,11 +2,42 @@ import React from "react";
 import "./MSection.css";
 import { Link } from "react-router-dom";
 import Database from "../pages/Database";
+import placeholder from "../assets/placeholder.png"
 const MainpageSection = () => {
   return (
     <>
-      <header className="headers">
-      </header>
+      <header>
+    <div id="top-header">
+        <div id="logo">
+            <img src={placeholder} />
+        </div>
+        <nav>
+            <ul>
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Our Products</a>
+                </li>
+                <li>
+                    <a href="#">Careers</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="header-image-menu">
+        
+        <h2 id="image-text">
+            A Basic Web Design course by GeeksforGeeks
+        </h2>
+    </div>
+</header>
 
       <section>
         <nav className="navs">
