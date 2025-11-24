@@ -1,11 +1,10 @@
 import { useState } from "react";
 
 export default function Login({ onLoginSuccess }) {
-  const [isRegister, setIsRegister] = useState(false); // true = Sign Up, false = Login
+  const [isRegister, setIsRegister] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  // Bisa simpan akun sementara di state
   const [accounts, setAccounts] = useState([]);
 
   const handleSubmit = (e) => {
@@ -22,9 +21,8 @@ export default function Login({ onLoginSuccess }) {
       alert("Akun berhasil dibuat!");
       setUsername("");
       setPassword("");
-      setIsRegister(false); // kembali ke login
+      setIsRegister(false);
     } else {
-      // Cek login
       const user = accounts.find(
         (acc) => acc.username === username && acc.password === password
       );
@@ -37,17 +35,15 @@ export default function Login({ onLoginSuccess }) {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-400 to-purple-600">
+    <div className="flex items-center justify-center min-h-screen bg-linear-to-r from-yellow-400 to-green-600">
       <div className="bg-white p-10 rounded-2xl shadow-2xl w-96 max-w-full">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="bg-blue-600 text-white w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold">
-            
-          </div>
+          <div className="bg-[url(/img/mountains.jpg)] text-white w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold"></div>
         </div>
 
         <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-8">
-          {isRegister ? "Create Account" : "Welcome Back"}
+          {isRegister ? "Membuat Akun" : "Selamat Datang"}
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -74,7 +70,7 @@ export default function Login({ onLoginSuccess }) {
         </form>
 
         <p className="text-center text-gray-500 mt-6">
-          {isRegister ? "Already have an account?" : "Don’t have an account?"}{" "}
+          {isRegister ? "Sudah Memiliki Akun?" : "Belum Memiliki Akun?"}{" "}
           <button
             className="text-blue-600 font-semibold hover:underline"
             onClick={() => {
