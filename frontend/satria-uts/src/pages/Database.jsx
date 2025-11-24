@@ -55,7 +55,7 @@ export default function Database() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
-        <h1 className="text-3xl font-bold text-center mb-6">📚 Data Siswa</h1>
+        <h1 className="text-3xl font-bold text-center mb-6">Database Kesiswaan</h1>
 
         {/* Form Input */}
         <form onSubmit={handleSubmit} className="space-y-4 mb-8">

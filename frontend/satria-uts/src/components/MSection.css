@@ -1,4 +1,8 @@
-
+.div-content{
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
 .navs {
   float: left;
   width: 30%;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Image from "./assets/default.svg"
 export default function Login({ onLoginSuccess }) {
   const [isRegister, setIsRegister] = useState(false);
   const [username, setUsername] = useState("");
@@ -35,11 +35,10 @@ export default function Login({ onLoginSuccess }) {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-linear-to-r from-yellow-400 to-green-600">
-      <div className="bg-white p-10 rounded-2xl shadow-2xl w-96 max-w-full">
-        {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-[url(/img/mountains.jpg)] text-white w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold"></div>
+    <div className="flex items-center justify-center min-h-screen bg-linear-to-r from-teal-400 to-green-600">
+      <div className="bg-white p-10 rounded-2xl shadow-2xl ">
+        <div className="h-10 w-auto bg-[url(/assets/default)]">
+          
         </div>
 
         <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-8">
