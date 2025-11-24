@@ -7,72 +7,53 @@ const MainpageSection = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <header>
-          <div id="top-header">
-            <div id="logo">
-              <img className="h-90" src={placeholder} />
-            </div>
-            <nav>
-              <ul>
-                <li className="active">
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">Our Products</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-                <li>
-                  <a href="#">Contact Us</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div>
-            <h2 id="image-text">A Basic Web Design course by GeeksforGeeks</h2>
-          </div>
-        </header>
         <div className="div-content grow">
-          <section>
-            <nav className="navs">
-              <ul className="uls">
-                <li>
-                  <button
-                    type="button"
-                    className="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-                  >
-                    <Link to="/Database">Database</Link>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-                  >
-                    Default
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-                  >
-                    Default
-                  </button>
-                </li>
-              </ul>
-            </nav>
-
-            <article className="articles">
-              <h1></h1>
-              <p></p>
-              <p></p>
-            </article>
-          </section>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="...">
+              {" "}
+              <nav className="navs bg-gray-500">
+                <ul className="uls">
+                  <li>
+                    <button
+                      type="button"
+                      className="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                    >
+                      <Link to="/Database">Database</Link>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                    >
+                      <Link to="/About">About</Link>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div className="bg-white">
+              {" "}
+              <section>
+                <article>
+                  <h1 className="font-bold">
+                    SELAMAT DATANG DI SISTEM INFORMASI DATA SISWA SEDERHANA
+                  </h1>
+                  <p>
+                    {" "}
+                    Sistem Informasi Data Siswa ini berisi fitur-fitur tentang
+                    pengolahan data siswa, data guru, data kelas, data
+                    pelajaran, pembagian kelas, pembagian wali kelas,
+                    penginputan nilai siswa, pencarian data siswa dan guru.
+                    Aplikasi ini juga dilengkapi report-report untuk keperluan
+                    akademik yakni antara lain: laporan dafatar guru, laporan
+                    biodata guru, laporan daftar siswa, laporan biodata siswa,
+                    dan laporan nilai siswa.
+                  </p>
+                </article>
+              </section>
+            </div>
+          </div>
         </div>
 
         <footer className="">
