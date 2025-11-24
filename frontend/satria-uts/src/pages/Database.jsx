@@ -58,7 +58,7 @@ const handleDelete = async (id) => {
 };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-linear-to-r from-teal-400 to-green-600 p-6">
       <div className="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
         <h1 className="text-3xl font-bold text-center mb-6">Database Kesiswaan</h1>
 
