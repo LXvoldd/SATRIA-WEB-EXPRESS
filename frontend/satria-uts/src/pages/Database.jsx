@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 export default function Database() {
   const [siswa, setSiswa] = useState([]);
   const [form, setForm] = useState({ nama: "", kelas: "", alamat: "" });
@@ -31,7 +31,7 @@ export default function Database() {
       await axios.post("http://localhost:5000/siswa", form);
     }
 
-    setForm({ nama: "", kelas: "", alamat: "" });
+    setForm({ nama: "", kelas: "", alamat: "",no_hp: "" , tanggal_lahir:"" });
     setEditId(null);
     loadData();
   };
@@ -61,6 +61,7 @@ const handleDelete = async (id) => {
     <div className="min-h-screen bg-linear-to-r from-teal-400 to-green-600 p-6">
       <div className="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
         <h1 className="text-3xl font-bold text-center mb-6">Database Kesiswaan</h1>
+        <button><Link to="/">Kembali Ke Mainpage</Link></button>
 
         {/* Form Input */}
         <form onSubmit={handleSubmit} className="space-y-4 mb-8">
