@@ -11,9 +11,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Mainpage />} />
           <Route path="/Database" element={<Database />} />
-          {/* Other routes */}
           <Route path="*" element={<p>404 Not Found</p>} />{" "}
-          {/* Catch-all for unmatched routes */}
         </Routes>
       </BrowserRouter>
     </>

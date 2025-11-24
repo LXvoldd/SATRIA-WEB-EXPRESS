@@ -5,9 +5,14 @@ import App from "./App.jsx";
 import Login from "./Login.jsx";
 
 function Root() {
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  return (
+  const [loggedIn, setLoggedIn] = useState(
+    () => localStorage.getItem("loggedIn") === "true"
+  );
+const handleLogin = () => {
+    localStorage.setItem("loggedIn", "true");
+    setLoggedIn(true);
+  };
+  return loggedIn ? <App /> : <Login onLoginSuccess={handleLogin} />; (
     <>
       {loggedIn ? (
         <App />
