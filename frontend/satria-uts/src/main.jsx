@@ -5,22 +5,18 @@ import App from "./App.jsx";
 import Login from "./Login.jsx";
 
 function Root() {
-  const [loggedIn, setLoggedIn] = useState(
-    () => localStorage.getItem("loggedIn") === "true"
-  );
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    localStorage.setItem("loggedIn", "true");
-    setLoggedIn(true);
-  };
-
-  return loggedIn ? (
-    <App />
-  ) : (
-    <Login onLoginSuccess={handleLogin} />
+  return (
+    <>
+      {loggedIn ? (
+        <App />
+      ) : (
+        <Login onLoginSuccess={() => setLoggedIn(true)} />
+      )}
+    </>
   );
 }
-
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
