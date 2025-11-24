@@ -48,7 +48,7 @@ export default function Database() {
 
   // Delete siswa
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/siswa/${id}`);
+    await axios.delete(`http://localhost:5173/siswa/${id}`);
     loadData();
   };
 

@@ -7,7 +7,7 @@ const MainpageSection = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <div className="div-content grow">
+        <div className="div-content grow bg-gray-300">
           <div class="grid grid-cols-2 gap-4">
             <div class="...">
               {" "}

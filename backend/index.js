@@ -58,7 +58,19 @@ app.put('/siswa/:id', (req, res) => {
         }
     );
 });
+// DELETE hapus siswa
+app.delete('/siswa/:id', (req, res) => {
+    const { id } = req.params;
 
+    db.query(
+        'DELETE FROM siswa WHERE id = ?',
+        [id],
+        (err) => {
+            if (err) return res.json({ error: err });
+            res.json({ message: 'Siswa berhasil dihapus' });
+        }
+    );
+});
 // ⬇⬇⬇ BAGIAN YANG KAMU LUPA ⬇⬇⬇
 app.listen(5000, () => {
     console.log("Server berjalan di http://localhost:5000");
