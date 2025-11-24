@@ -17,27 +17,27 @@ const MainpageSection = () => {
               {" "}
               <div className="...">
                 <ul>
-                  <li className="mb-4">
+                  <li className="mb-4 bg-gray-500 h-10">
                     <a href="#" className="hover:text-gray-400">
                       Dashboard
                     </a>
                   </li>
-                  <li className="mb-4">
+                  <li className="mb-4 bg-gray-500 h-10">
                     <a href="#" className="hover:text-gray-400">
                       Settings
                     </a>
                   </li>
-                  <li className="mb-4">
+                  <li className="mb-4 bg-gray-500 h-10">
                     <a href="#" className="hover:text-gray-400">
                       Profile
                     </a>
                   </li>
-                  <li className="mb-4">
+                  <li className="mb-4 bg-gray-500 h-10">
                     <a href="#" className="hover:text-gray-400">
                       Messages
                     </a>
                   </li>
-                  <li className="mb-4">
+                  <li className="mb-4 bg-gray-500 h-10">
                     <a href="#" className="hover:text-gray-400">
                       Logout
                     </a>
