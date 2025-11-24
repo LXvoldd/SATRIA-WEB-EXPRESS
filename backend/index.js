@@ -65,7 +65,9 @@ app.put("/siswa/:id", (req, res) => {
 app.delete("/siswa/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const [result] = await dbPromise.execute("DELETE FROM siswa WHERE id = ?", [id]);
+    const [result] = await dbPromise.execute("DELETE FROM siswa WHERE id = ?", [
+      id,
+    ]);
     // result.affectedRows indicates how many rows were deleted
     if (result && result.affectedRows === 0) {
       return res.status(404).json({ message: "Siswa tidak ditemukan" });
