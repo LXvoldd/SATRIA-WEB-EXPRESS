@@ -8,20 +8,19 @@ function Root() {
   const [loggedIn, setLoggedIn] = useState(
     () => localStorage.getItem("loggedIn") === "true"
   );
-const handleLogin = () => {
+
+  const handleLogin = () => {
     localStorage.setItem("loggedIn", "true");
     setLoggedIn(true);
   };
-  return loggedIn ? <App /> : <Login onLoginSuccess={handleLogin} />; (
-    <>
-      {loggedIn ? (
-        <App />
-      ) : (
-        <Login onLoginSuccess={() => setLoggedIn(true)} />
-      )}
-    </>
+
+  return loggedIn ? (
+    <App />
+  ) : (
+    <Login onLoginSuccess={handleLogin} />
   );
 }
+
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
