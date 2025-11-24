@@ -47,10 +47,15 @@ export default function Database() {
   };
 
   // Delete siswa
-  const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5173/siswa/${id}`);
+const handleDelete = async (id) => {
+  try {
+    await axios.delete(`http://localhost:5000/siswa/${id}`);
     loadData();
-  };
+  } catch (error) {
+    console.error("Tidak bisa menghapus siswa:", error);
+    alert("Tidak bisa menghapus data siswa, mohon coba lagi");
+  }
+};
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">

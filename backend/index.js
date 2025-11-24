@@ -63,7 +63,7 @@ app.delete('/siswa/:id', (req, res) => {
     const { id } = req.params;
 
     db.query(
-        'DELETE FROM siswa WHERE id = ?',
+        'DELETE FROM siswa WHERE id=?',
         [id],
         (err) => {
             if (err) return res.json({ error: err });
