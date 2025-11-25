@@ -25,6 +25,14 @@ const MainpageSection = () => {
                       Cek Database Siswa
                     </Link>
                   </li>
+                  <li className="mb-4 bg-gray-500 h-10 flex items-center pl-4">
+                    <Link
+                      to="/DbGuru"
+                      className=" text-white hover:text-gray-300 font-bold"
+                    >
+                      Cek Database Guru
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="...">

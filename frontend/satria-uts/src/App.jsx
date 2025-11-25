@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import MainpageSection from "./components/MainpageSection";
 import Database from "./pages/Database"
 import Mainpage from "./pages/Mainpage"
-import About from "./pages/About";
+import DbGuru from "./pages/DbGuru";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Mainpage />} />
           <Route path="/Database" element={<Database />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/DbGuru" element={<DbGuru />} />
           <Route path="*" element={<p>404 Not Found</p>} />{" "}
         </Routes>
       </BrowserRouter>
