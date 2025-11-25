@@ -8,7 +8,7 @@ const MainpageSection = () => {
     <>
       <div className="p-14"></div>
       <div className="min-h-screen bg-linear-to-r from-teal-400 to-green-600  p-6">
-        <div className="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
+<div className="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-lg">        
           <h1 className="text-3xl font-bold text-center mb-6">
             Database Kesiswaan
           </h1>
@@ -44,8 +44,8 @@ const MainpageSection = () => {
                   <p>
                     {" "}
                     Sistem Informasi Data Siswa ini berisi fitur-fitur tentang
-                    pengolahan data siswa, dan laporan biodata siswa,
-                    dan laporan nilai siswa.
+                    pengolahan data siswa, dan laporan biodata siswa, dan
+                    laporan nilai siswa.
                   </p>
                 </article>
               </div>{" "}
