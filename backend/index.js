@@ -6,43 +6,25 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Koneksi database untuk siswa
-const dbSiswa = mysql.createConnection({
+// Koneksi database untuk siswa dan guru (sekarang hanya db_siswa)
+const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "db_siswa", // Database untuk siswa
+  database: "db_siswa", // Sekarang hanya satu database
 });
 
-// Koneksi database untuk guru
-const dbGuru = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "db_teacher", // Database untuk guru
-});
-
-// Cek koneksi siswa
-dbSiswa.connect((err) => {
+// Cek koneksi database
+db.connect((err) => {
   if (err) {
-    console.log("Gagal konek ke database siswa:", err);
+    console.log("Gagal konek ke database:", err);
   } else {
-    console.log("Database siswa terkoneksi!");
-  }
-});
-
-// Cek koneksi guru
-dbGuru.connect((err) => {
-  if (err) {
-    console.log("Gagal konek ke database guru:", err);
-  } else {
-    console.log("Database guru terkoneksi!");
+    console.log("Database terkoneksi!");
   }
 });
 
 // Promise wrapper for convenient async/await usage
-const dbSiswaPromise = dbSiswa.promise();
-const dbGuruPromise = dbGuru.promise();
+const dbPromise = db.promise();
 
 // ==========================================
 // Routes untuk Siswa
@@ -50,7 +32,7 @@ const dbGuruPromise = dbGuru.promise();
 
 // GET semua siswa
 app.get("/siswa", (req, res) => {
-  dbSiswa.query("SELECT * FROM siswa", (err, result) => {
+  db.query("SELECT * FROM siswa", (err, result) => {
     if (err) return res.json({ error: err });
     res.json(result);
   });
@@ -60,7 +42,7 @@ app.get("/siswa", (req, res) => {
 app.post("/siswa", (req, res) => {
   const { nama, kelas, jurusan, alamat } = req.body;
 
-  dbSiswa.query(
+  db.query(
     "INSERT INTO siswa (nama, kelas, jurusan, alamat) VALUES (?, ?, ?, ?)",
     [nama, kelas, jurusan, alamat],
     (err, result) => {
@@ -75,7 +57,7 @@ app.put("/siswa/:id", (req, res) => {
   const { nama, kelas, jurusan, alamat } = req.body;
   const { id } = req.params;
 
-  dbSiswa.query(
+  db.query(
     "UPDATE siswa SET nama=?, kelas=?, jurusan=?, alamat=? WHERE id=?",
     [nama, kelas, jurusan, alamat, id],
     (err) => {
@@ -89,7 +71,7 @@ app.put("/siswa/:id", (req, res) => {
 app.delete("/siswa/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const [result] = await dbSiswaPromise.execute(
+    const [result] = await dbPromise.execute(
       "DELETE FROM siswa WHERE id = ?",
       [id]
     );
@@ -109,7 +91,7 @@ app.delete("/siswa/:id", async (req, res) => {
 
 // GET semua guru
 app.get("/teachers", (req, res) => {
-  dbGuru.query("SELECT * FROM teachers", (err, result) => {
+  db.query("SELECT * FROM teachers", (err, result) => {
     if (err) return res.json({ error: err });
     res.json(result);
   });
@@ -118,7 +100,7 @@ app.get("/teachers", (req, res) => {
 // POST tambah guru
 app.post("/teachers", (req, res) => {
   const { name, subject, address, phone } = req.body;
-  dbGuru.query(
+  db.query(
     "INSERT INTO teachers (name, subject, address, phone) VALUES (?, ?, ?, ?)",
     [name, subject, address, phone],
     (err, result) => {
@@ -133,7 +115,7 @@ app.put("/teachers/:id", (req, res) => {
   const { name, subject, address, phone } = req.body;
   const { id } = req.params;
 
-  dbGuru.query(
+  db.query(
     "UPDATE teachers SET name=?, subject=?, address=?, phone=? WHERE id=?",
     [name, subject, address, phone, id],
     (err) => {
@@ -147,7 +129,7 @@ app.put("/teachers/:id", (req, res) => {
 app.delete("/teachers/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const [result] = await dbGuruPromise.execute(
+    const [result] = await dbPromise.execute(
       "DELETE FROM teachers WHERE id = ?",
       [id]
     );
