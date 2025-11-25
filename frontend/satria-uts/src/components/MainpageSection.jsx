@@ -7,12 +7,11 @@ const MainpageSection = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-r from-teal-400 to-green-600 p-6 main-wrapper">
-        {/* LOGO */}
+
         <div className="flex items-center gap-4 mb-8 logo-box">
           <img className="h-20 drop-shadow-xl rounded-lg" alt="Medcom Logo" />
         </div>
 
-        {/* CARD UTAMA */}
         <div
           className="max-w-5xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border
                         border-gray-200 backdrop-blur-lg main-card"
@@ -21,9 +20,7 @@ const MainpageSection = () => {
             Database Kesiswaan
           </h1>
 
-          {/* GRID LAYOUT */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* LEFT SIDE MENU */}
             <div>
               <ul className="space-y-4">
                 <li className="menu-button">
@@ -57,12 +54,11 @@ const MainpageSection = () => {
             {/* RIGHT SIDE DESCRIPTION */}
             <article className="info-box">
               <h2 className="font-bold text-2xl mb-4 text-gray-800">
-                Selamat Datang 🎉
+                Selamat Datang Di Database Siswa SMK Medikacom Versi 1.0
               </h2>
               <p className="text-gray-700 leading-relaxed">
                 Sistem Informasi Data Siswa ini berisi fitur pengolahan dan
-                penyajian data siswa, laporan biodata siswa, data guru, dan
-                laporan nilai. Dibuat agar pemantauan informasi sekolah lebih
+                penyajian data siswa, laporan biodata siswa,dan data guru, Dibuat agar pemantauan informasi sekolah lebih
                 mudah, cepat, dan efisien.
               </p>
             </article>
