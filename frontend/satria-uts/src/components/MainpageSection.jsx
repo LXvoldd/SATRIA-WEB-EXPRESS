@@ -1,60 +1,79 @@
 import React from "react";
 import "./MSection.css";
 import { Link } from "react-router-dom";
-import Database from "../pages/Database";
-
 import logo from "../assets/medcom.png";
+
 const MainpageSection = () => {
   return (
     <>
-      <div className="min-h-screen bg-linear-to-r from-teal-400 to-green-600  p-6">
-        <div className="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
-          <h1 className="text-3xl font-bold text-center mb-6">
+      <div className="min-h-screen bg-gradient-to-r from-teal-400 to-green-600 p-6 main-wrapper">
+        {/* LOGO */}
+        <div className="flex items-center gap-4 mb-8 logo-box">
+          <img className="h-20 drop-shadow-xl rounded-lg" alt="Medcom Logo" />
+        </div>
+
+        {/* CARD UTAMA */}
+        <div
+          className="max-w-5xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border
+                        border-gray-200 backdrop-blur-lg main-card"
+        >
+          <h1 className="text-4xl font-extrabold text-center mb-10 text-gray-800 tracking-wide">
             Database Kesiswaan
           </h1>
-          <div>
-            <div className="grid grid-cols-2 gap-2">
-              {" "}
-              <div className="...">
-                <ul>
-                  <li className="mb-4 bg-gray-500 h-10 flex items-center pl-4">
-                    <Link
-                      to="/Database"
-                      className=" text-white hover:text-gray-300 font-bold"
-                    >
-                      Cek Database Siswa
-                    </Link>
-                  </li>
-                  <li className="mb-4 bg-gray-500 h-10 flex items-center pl-4">
-                    <Link
-                      to="/DbGuru"
-                      className=" text-white hover:text-gray-300 font-bold"
-                    >
-                      Cek Database Guru
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="...">
-                {" "}
-                <article>
-                  <h1 className="font-bold">
-                    SELAMAT DATANG DI SISTEM INFORMASI DATA SISWA SEDERHANA
-                  </h1>
-                  <p>
-                    {" "}
-                    Sistem Informasi Data Siswa ini berisi fitur-fitur tentang
-                    pengolahan data siswa,laporan biodata siswa,laporan guru dan
-                    laporan nilai siswa.
-                  </p>
-                </article>
-              </div>{" "}
+
+          {/* GRID LAYOUT */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* LEFT SIDE MENU */}
+            <div>
+              <ul className="space-y-4">
+                <li className="menu-button">
+                  <Link
+                    to="/Database"
+                    className="text-white font-semibold text-lg tracking-wide"
+                  >
+                    Cek Database Siswa
+                  </Link>
+                </li>
+
+                <li className="menu-button">
+                  <Link
+                    to="/DbGuru"
+                    className="text-white font-semibold text-lg tracking-wide"
+                  >
+                    Cek Database Guru
+                  </Link>
+                </li>
+                <li className="menu-button">
+                  <Link
+                    to="/About"
+                    className="text-white font-semibold text-lg tracking-wide"
+                  >
+                    Tentang Website Ini
+                  </Link>
+                </li>
+              </ul>
             </div>
+
+            {/* RIGHT SIDE DESCRIPTION */}
+            <article className="info-box">
+              <h2 className="font-bold text-2xl mb-4 text-gray-800">
+                Selamat Datang 🎉
+              </h2>
+              <p className="text-gray-700 leading-relaxed">
+                Sistem Informasi Data Siswa ini berisi fitur pengolahan dan
+                penyajian data siswa, laporan biodata siswa, data guru, dan
+                laporan nilai. Dibuat agar pemantauan informasi sekolah lebih
+                mudah, cepat, dan efisien.
+              </p>
+            </article>
           </div>
         </div>
       </div>
-      <footer className="">
-        <p>Database Kesiswaan SMK Medikacom, All Rights Reserved</p>
+
+      <footer className="text-center mt-10 p-5 text-white bg-gray-900 shadow-inner">
+        <p className="tracking-wide">
+          Database Kesiswaan SMK Medikacom — All Rights Reserved ©2025
+        </p>
       </footer>
     </>
   );

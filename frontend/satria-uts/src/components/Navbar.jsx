@@ -1,61 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/medcom.png";
-function Navbar() {
-  return (
-    <>
-      
-<nav className="bg-black fixed w-full z-20 top-0 start-0 border-default">
-  <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src={logo} className="h-20" alt="Medcom Logo" />
-    </a>
-    <button data-collapse-toggle="navbar-dropdown" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-dropdown" aria-expanded="false">
-        <span className="sr-only">Open main menu</span>
-        <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
-    </button>
-    <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-      <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
-        <li>
-          <a href="#" className="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0" aria-current="page">Home</a>
-        </li>
-        <li>
-            <button id="dropdownNvbarButton" data-dropdown-toggle="dropdownNavbar" className="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0">
-              Dropdown 
-              <svg className="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
-          </button>
-          
-          <div id="dropdownNavbar" className="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
-              <ul className="p-2 text-sm text-body font-medium" aria-labelledby="dropdownNvbarButton">
-                <li>
-                  <a href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Dashboard</a>
-                </li>
-                <li>
-                  <a href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Settings</a>
-                </li>
-                <li>
-                  <a href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Earnings</a>
-                </li>
-                <li>
-                  <a href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Sign out</a>
-                </li>
-              </ul>
-          </div>
-        </li>
-        <li>
-          <a href="#" className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Services</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Pricing</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-    </>
+function Navbar() {
+  const [darkMode, setDarkMode] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  const navigate = useNavigate();
+
+  // Logout
+  const handleLogout = () => {
+    window.location.reload();
+    localStorage.removeItem("authToken");
+    navigate("/login");
+  };
+
+  return (
+    <nav className="bg-linear-to-r from-teal-500 to-green-600 fixed w-full z-20 top-0 start-0 shadow-lg">
+      <div className="max-w-7xl flex items-center justify-between mx-auto p-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-3">
+          <img src={logo} className="h-16 drop-shadow-md" alt="Medcom Logo" />
+        </Link>
+
+        {/* Menu Desktop */}
+        <div className="hidden md:flex items-center space-x-8 text-white font-medium">
+          <Link to="/" className="hover:text-gray-200">
+            Home
+          </Link>
+          <Link to="/about" className="hover:text-gray-200">
+            About
+          </Link>
+
+          {/* Logout */}
+          <button
+            onClick={handleLogout}
+            className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg shadow"
+          >
+            Logout
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          onClick={() => setOpenMenu(!openMenu)}
+          className="md:hidden inline-flex items-center p-2 text-white hover:bg-white/20 rounded-lg"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {openMenu && (
+        <div className="md:hidden bg-white/20 backdrop-blur-lg text-white px-6 py-4 space-y-4 font-medium">
+          <Link to="/" className="block hover:text-gray-200">
+            Home
+          </Link>
+          <Link to="/about" className="block hover:text-gray-200">
+            About
+          </Link>
+
+          <button
+            onClick={handleDarkMode}
+            className="block px-3 py-2 bg-white/20 hover:bg-white/30 rounded-lg"
+          >
+            {darkMode ? "☀ Mode Terang" : "🌙 Mode Gelap"}
+          </button>
+
+          <button
+            onClick={handleLogout}
+            className="w-full px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg shadow"
+          >
+            Logout
+          </button>
+        </div>
+      )}
+    </nav>
   );
 }
 

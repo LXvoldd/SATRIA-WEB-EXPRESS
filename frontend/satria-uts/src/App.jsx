@@ -5,7 +5,7 @@ import MainpageSection from "./components/MainpageSection";
 import Database from "./pages/Database"
 import Mainpage from "./pages/Mainpage"
 import DbGuru from "./pages/DbGuru";
-
+import About from "./pages/About";
 const App = () => {
   return (
     <>
@@ -14,6 +14,7 @@ const App = () => {
           <Route path="/" element={<Mainpage />} />
           <Route path="/Database" element={<Database />} />
           <Route path="/DbGuru" element={<DbGuru />} />
+          <Route path="/About" element={<About />} />
           <Route path="*" element={<p>404 Not Found</p>} />{" "}
         </Routes>
       </BrowserRouter>
