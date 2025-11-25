@@ -13,7 +13,7 @@ const About = () => {
             Website ini dibuat sebagai tugas Ulangan Akhir Semester yang
             memiliki fungsi <i>basic</i> seperti <i>CRUD</i>
           </p>
-          <p>Kelompok</p>
+          <p>Kelompok 7</p>
           <p className="font-bold">Dibuat Oleh</p>
           <ul>
             <li>
