@@ -107,15 +107,6 @@ export default function Database() {
             required
           />
 
-          <input
-            name="jurusan"
-            value={form.jurusan || ""} // Ensure it's always a string
-            onChange={handleChange}
-            placeholder="Jurusan"
-            className="w-full p-3 border rounded-xl"
-            required
-          />
-
           <button className="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700">
             {editId ? "Update Siswa" : "Tambah Siswa"}
           </button>
@@ -128,7 +119,7 @@ export default function Database() {
               <th className="p-4">Nama</th>
               <th className="p-4">Kelas</th>
               <th className="p-4">Alamat</th>
-              <th className="p-4">Jurusan</th>
+
               <th className="p-4 text-center">Aksi</th>
             </tr>
           </thead>
@@ -142,7 +133,7 @@ export default function Database() {
                 <td className="p-4">{item.nama}</td>
                 <td className="p-4">{item.kelas}</td>
                 <td className="p-4">{item.alamat}</td>
-                <td className="p-4">{item.jurusan}</td>
+
                 <td className="p-4 flex gap-4 justify-center">
                   <button
                     onClick={() => handleEdit(item)}

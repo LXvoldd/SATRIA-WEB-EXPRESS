@@ -7,11 +7,8 @@ import logo from "../assets/medcom.png";
 const MainpageSection = () => {
   return (
     <>
-   
-      
       <div className="min-h-screen bg-linear-to-r from-teal-400 to-green-600  p-6">
-         <img src={logo} className="h-20" alt="Medcom Logo" />
-<div className="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-lg">        
+        <div className="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
           <h1 className="text-3xl font-bold text-center mb-6">
             Database Kesiswaan
           </h1>
