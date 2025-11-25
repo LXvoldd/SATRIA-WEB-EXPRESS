@@ -17,30 +17,13 @@ const MainpageSection = () => {
               {" "}
               <div className="...">
                 <ul>
-                  <li className="mb-4 bg-gray-500 h-10">
-                    <a href="#" className="hover:text-gray-400">
-                      Dashboard
-                    </a>
-                  </li>
-                  <li className="mb-4 bg-gray-500 h-10">
-                    <a href="#" className="hover:text-gray-400">
-                      Settings
-                    </a>
-                  </li>
-                  <li className="mb-4 bg-gray-500 h-10">
-                    <a href="#" className="hover:text-gray-400">
-                      Profile
-                    </a>
-                  </li>
-                  <li className="mb-4 bg-gray-500 h-10">
-                    <a href="#" className="hover:text-gray-400">
-                      Messages
-                    </a>
-                  </li>
-                  <li className="mb-4 bg-gray-500 h-10">
-                    <a href="#" className="hover:text-gray-400">
-                      Logout
-                    </a>
+                  <li className="mb-4 bg-gray-500 h-10 flex items-center pl-4">
+                    <Link
+                      to="/Database"
+                      className=" text-white hover:text-gray-300 font-bold"
+                    >
+                      Cek Database Siswa
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -53,12 +36,7 @@ const MainpageSection = () => {
                   <p>
                     {" "}
                     Sistem Informasi Data Siswa ini berisi fitur-fitur tentang
-                    pengolahan data siswa, data guru, data kelas, data
-                    pelajaran, pembagian kelas, pembagian wali kelas,
-                    penginputan nilai siswa, pencarian data siswa dan guru.
-                    Aplikasi ini juga dilengkapi report-report untuk keperluan
-                    akademik yakni antara lain: laporan dafatar guru, laporan
-                    biodata guru, laporan daftar siswa, laporan biodata siswa,
+                    pengolahan data siswa, dan laporan biodata siswa,
                     dan laporan nilai siswa.
                   </p>
                 </article>
