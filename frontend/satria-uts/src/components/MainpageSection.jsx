@@ -6,7 +6,7 @@ import logo from "../assets/medcom.png";
 const MainpageSection = () => {
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-r from-teal-400 to-green-600 p-6 main-wrapper">
+      <div className="min-h-screen bg-linear-to-r from-teal-400 to-green-600 p-6 main-wrapper">
 
         <div className="flex items-center gap-4 mb-8 logo-box">
           <img className="h-20 drop-shadow-xl rounded-lg" alt="Medcom Logo" />
